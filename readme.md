@@ -21,18 +21,13 @@ MobX is also seperated from any rendering or component initialization, unlike in
 Vue
 ```
 var vm = new Vue({
-  el: '#demo',
   data: {
     firstName: 'Foo',
-    lastName: 'Bar',
-    fullName: 'Foo Bar'
+    lastName: 'Bar'
   },
-  watch: {
-    firstName: function (val) {
-      this.fullName = val + ' ' + this.lastName
-    },
-    lastName: function (val) {
-      this.fullName = this.firstName + ' ' + val
+  computed: {
+    fullName: function () {
+      return this.firstName + ' ' + this.lastName
     }
   }
 })
