@@ -134,6 +134,7 @@ Development:
           Compile time --------- Size
 Vue:       821ms                 159kB
 React:    1411ms                 881kB
+Preact    1267ms                 190kB
 ```
 
 Production:
@@ -141,9 +142,10 @@ Production:
           Compile time --------- Size
 Vue:      2871ms                  59kB
 React:    8614ms                 282kB
+Preact:   3280ms                  79kB
 ```
 
-Vue is miles ahead in this battle, if lightweight performance and file size are essential, I would definitely opt for Vue.
+Vue is miles ahead in this battle, if lightweight performance and file size are essential, I would definitely opt for Vue. If you include Preact, a lightweight React alternative with an almost identical API I'd opt for that, simply because I know React more than Vue.
 
 ## Build tools
 

@@ -1,0 +1,30 @@
+{
+  "name": "@jarsbe/react-mobx",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "npm run server & npm run webpack",
+    "server": "python -m SimpleHTTPServer",
+    "webpack": "webpack -w",
+    "build": "webpack -p --config webpack.production.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "mobx": "^2.6.0",
+    "mobx-preact": "0.0.4",
+    "mobx-react": "^3.5.8",
+    "preact": "^6.3.0",
+    "react": "^15.3.2",
+    "react-dom": "^15.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.17.0",
+    "babel-loader": "^6.2.5",
+    "babel-plugin-transform-react-jsx": "^6.8.0",
+    "babel-preset-es2015": "^6.16.0",
+    "babel-preset-react": "^6.16.0",
+    "webpack": "^1.13.2"
+  }
+}

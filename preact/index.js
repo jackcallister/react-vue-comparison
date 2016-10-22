@@ -1,26 +1,25 @@
-import React from 'react'
-import { render } from 'react-dom'
+import { h, render, Component } from 'preact'
 import { observable } from 'mobx'
-import { Provider } from 'mobx-react'
+import { Provider } from 'mobx-preact'
 import Increment from './Increment'
 import Counter from './Counter'
 
-const state = observable({
+const store = observable({
   count: 1,
 })
 
-state.increment = () => {
- state.count += 1
+store.increment = () => {
+ store.count += 1
 }
 
 // Async
 setTimeout(() => {
-  state.count = 10
+  store.count = 10
 }, 5000)
 
 document.addEventListener('DOMContentLoaded', () => {
   render(
-    <Provider state={state}>
+    <Provider store={store}>
       <div>
         <Increment title='Click me...' />
         <Counter />
