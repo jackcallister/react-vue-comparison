@@ -5,7 +5,7 @@ export default Vue.component('Increment', {
 
   props: {
     title: '',
-    onClick: null,
+    increment: null,
   },
 
   render: (h, { props: { title, increment } }) => {
