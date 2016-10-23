@@ -102,7 +102,7 @@ render () {
 }
 ```
 
-Here is my "corrected" version. The above example is clearly trying to demonstrate the unreadability of JSX over templating by using extraneous branching and inline looping. Readability within a render function is determined by the programmer writing the code, wheras the templating system in Vue would determine the readability. Note: I'm unsure if one can call out to other rendering methods within the Vue `render` function, if that's not the case then this is a severe restriction.
+Here is my "corrected" version. The above example is clearly trying to demonstrate the unreadability of JSX over templating by using extraneous branching and inline looping. Readability within a render function is determined by the programmer writing the code, wheras the templating system in Vue would determine the readability. Note: I'm unsure if one can call out to other rendering methods within the Vue `render` function, if that's not the case then this is a severe restriction. Edit: I looked into spliting out render functions inside the Vue render, no dice, you're stuck with doing everything in a single render function unless you call out to other functions and pass along props. A bit annoying but doable.
 
 ```
 renderList() {
@@ -131,18 +131,18 @@ Vue wins hands down in this scenario. React is much bigger even more so when com
 
 Development:
 ```
-          Compile time --------- Size
-Vue:       821ms                 159kB
-React:    1411ms                 881kB
-Preact    1267ms                 190kB
+          Initial Compile         Size
+Vue:                821ms        159kB
+React:             1411ms        881kB
+Preact             1267ms        190kB
 ```
 
 Production:
 ```
-          Compile time --------- Size
-Vue:      2871ms                  59kB
-React:    8614ms                 282kB
-Preact:   3280ms                  79kB
+          Initial Compile         Size
+Vue:               2871ms         59kB
+React:             8614ms        282kB
+Preact:            3280ms         79kB
 ```
 
 Vue is miles ahead in this battle, if lightweight performance and file size are essential, I would definitely opt for Vue. If you include Preact, a lightweight React alternative with an almost identical API I'd opt for that, simply because I know React more than Vue.
@@ -154,3 +154,5 @@ They are exactly the same in almost every respect. Not much more needed to say h
 ## General Vibe
 
 I don't like the name MobX, it looks and sounds like something I'd say as a teenager making up words. Vue sounds cool, but the green on the website is sickly. React is big, but useful and not so big that I'm not going to use it. The logo needs a refresh too; what does React have to do with an atom? Anyway, React is around for the long term. It's nice that the same principals learned using React can be used with alternative frameworks like Vue. If I need a super light, fast application to work on mobile 3G I may look at using Vue, especially since it's an integrated solution. For everything else I'll probably rely on React, if it's needed, and MobX, again only if it's really needed.
+
+Edit: After building this comparison I wanted to look at other lightweight virtual DOM solutions. Preact would now be my go to replacement for a lightweight React alternative. The API is essentially the same but with a few improvements over React, including performance and size. Since Preact doesn't have a huge community attached to specific versions releases and improvements are rather quick too.
