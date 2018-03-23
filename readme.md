@@ -40,7 +40,7 @@ class Store {
   @observable lastName = 'Bar';
 
   @computed get fullName() {
-    return `${this.firstName} ${this.lastName}
+    return `${this.firstName} ${this.lastName}`
   }
 }
 
